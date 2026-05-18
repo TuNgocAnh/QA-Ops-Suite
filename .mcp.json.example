@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "lark-mcp": {
+      "command": "npx",
+      "args": [
+        "-y", "@larksuiteoapi/lark-mcp", "mcp",
+        "-a", "${LARK_APP_ID}",
+        "-s", "${LARK_APP_SECRET}",
+        "--domain", "https://open.larksuite.com",
+        "--token-mode", "user_access_token",
+        "-u", "${LARK_USER_ACCESS_TOKEN}",
+        "-t", "preset.doc.default,docx.v1.documentBlock.list,drive.v1.media.batchGetTmpDownloadUrl,drive.v1.fileComment.list,drive.v1.fileComment.get,wiki.v2.space.getNode,wiki.v1.node.search,bitable.v1.app.get,bitable.v1.appTable.list,bitable.v1.appTableField.list,bitable.v1.appTableRecord.create,bitable.v1.appTableRecord.list,bitable.v1.appTableRecord.update,bitable.v1.appTableRecord.delete,bitable.v1.appTableRecord.get,bitable.v1.appTableRecord.search,task.v2.task.list,task.v2.task.get,task.v2.task.create,task.v2.task.patch,task.v2.taskComment.list,task.v2.taskComment.create,task.v2.tasklist.list"
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "description": "Cache dữ liệu board bug Lark Bitable - dùng cho /log-bug. Đây là file TEMPLATE. Sau khi setup, chạy `python3 configs/lark_bug_cache.py refresh` (hoặc `/update-board`) để fetch options thật từ board của bạn.",
+    "board": {
+      "app_token": "bas<YOUR_BASE_ID>",
+      "table_id": "tbl<YOUR_TABLE_ID>"
+    },
+    "last_updated": "YYYY-MM-DD",
+    "version_last_fetched": null,
+    "version_count": 0,
+    "version_source_board": "<board_alias>"
+  },
+  "dev_pic": [
+    {
+      "id": "ou_<openid_of_developer>",
+      "name": "Example Dev",
+      "aliases": ["example", "example dev"],
+      "email": "example.dev@yourcompany.com"
+    }
+  ],
+  "sprint": [
+    {"id": "<opt_id>", "name": "1-2026/1"}
+  ],
+  "platform": [
+    {"id": "<opt_id>", "name": "Web"},
+    {"id": "<opt_id>", "name": "Mobile"},
+    {"id": "<opt_id>", "name": "API"}
+  ],
+  "tinh_nang": [
+    {"id": "<opt_id>", "name": "Login"},
+    {"id": "<opt_id>", "name": "Payment"}
+  ],
+  "type": [
+    {"id": "<opt_id>", "name": "Functional"},
+    {"id": "<opt_id>", "name": "UI"},
+    {"id": "<opt_id>", "name": "Performance"}
+  ],
+  "priority": [
+    {"id": "<opt_id>", "name": "P1 - Critical"},
+    {"id": "<opt_id>", "name": "P2 - High"},
+    {"id": "<opt_id>", "name": "P3 - Medium"},
+    {"id": "<opt_id>", "name": "P4 - Low"}
+  ],
+  "status": [
+    {"id": "<opt_id>", "name": "New"},
+    {"id": "<opt_id>", "name": "In Progress"},
+    {"id": "<opt_id>", "name": "Fixed"},
+    {"id": "<opt_id>", "name": "Closed"}
+  ],
+  "version": [
+    {"id": "<opt_id>", "name": "1.0.0"}
+  ]
+}

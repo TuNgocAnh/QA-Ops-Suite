@@ -1,0 +1,17 @@
+# QA Ops Suite - Python dependencies
+# Install: pip3 install -r requirements.txt
+
+# Google Drive + Sheets API (OAuth flow)
+google-auth>=2.0.0
+google-auth-oauthlib>=1.0.0
+google-auth-httplib2>=0.1.0
+google-api-python-client>=2.0.0
+
+# xlsx generation (test case templates)
+openpyxl>=3.1.0
+
+# HTTP client (Lark API, OAuth callbacks)
+requests>=2.28.0
+
+# YAML parser (sitemap.yaml)
+PyYAML>=6.0

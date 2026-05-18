@@ -1,0 +1,63 @@
+# Sitemap template — copy thành `sitemap.yaml` (gitignored) rồi tự enrich qua /analyze, /cook.
+#
+# Schema:
+#   version: int
+#   product: string                 # tên sản phẩm
+#   last_updated: 'YYYY-MM-DD'
+#   pages:                          # navigation tree
+#     <page_id>:
+#       name: string                # tên màn hình hiển thị
+#       group: string               # nhóm chức năng (auth, home, settings, ...)
+#       nav_steps: string           # cách điều hướng tới màn này
+#       auth_required: bool
+#       roles: [string]             # role có thể truy cập (all, admin, user, ...)
+#       parent: <page_id> | null
+#       children: [<page_id>]
+#   features:                       # registry các feature
+#     <feature_id>:
+#       name: string
+#       page: <page_id>             # màn hình chính của feature
+#       depends_on: [<feature_id>]  # dependencies
+#       impacts:                    # tác động cross-feature
+#         - target: <feature_id>
+#           type: data_change | navigation | permission | notification
+#           description: string
+#   flows:                          # shared flows reuse được giữa các feature
+#     <flow_id>:
+#       name: string
+#       steps: [string]
+#       used_by: [<feature_id>]
+
+version: 1
+product: MyApp
+last_updated: 'YYYY-MM-DD'
+
+pages:
+  splash:
+    name: App splash screen
+    group: splash
+    nav_steps: Mở app
+    auth_required: false
+    roles: [all]
+    parent: null
+    children: [login]
+  login:
+    name: Đăng nhập
+    group: auth
+    nav_steps: Từ Splash
+    auth_required: false
+    roles: [all]
+    parent: splash
+    children: [home]
+  home:
+    name: Trang chủ
+    group: home
+    nav_steps: Sau khi đăng nhập thành công
+    auth_required: true
+    roles: [user, admin]
+    parent: login
+    children: []
+
+features: {}
+
+flows: {}

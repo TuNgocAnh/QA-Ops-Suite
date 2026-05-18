@@ -1,0 +1,58 @@
+# Environment variables (chứa tokens)
+.env
+.env.local
+
+# MCP config (chứa Lark app_id + app_secret) — dùng .mcp.json.example để share
+.mcp.json
+
+# OAuth tokens (user-specific, DO NOT commit)
+configs/google-oauth-token.json
+configs/lark-oauth-token.json
+
+# Board registry (chứa real wiki tokens / base IDs của team) — dùng .example để share
+.claude/boards.md
+
+# Board options cache (chứa open_id + email của member team) — dùng .example để share
+configs/lark_bug_board_cache.json
+
+# Sitemap (auto-enriched per project, chứa product internals) — dùng .example để share
+.claude/sitemap.yaml
+
+# Test case / cook output (per-project results, không share)
+results/
+
+# OS files
+.DS_Store
+*/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Figma tracking (session-specific, per user)
+*-figma-tracking.md
+
+# Agent summary files (session-specific, per user)
+*-figma-summary.md
+*-docs-summary.md
+*-links-tracking.md
+
+# Auto-memory (personal per user)
+.claude/projects/
+Results
+settings.local.json
+
+# Multi-board confirmation state (machine-local)
+.claude/.board-state.json
+
+# Codex parity runtime outputs
+.codex/parity/results/claude/*.md
+.codex/parity/results/codex/*.md
+.codex/parity/reports/*.diff
+
+# User work-in-progress data (không chia sẻ, mỗi người tự quản lý)
+bug-videos/
+example/
+plans/
+docs/
+dptk
