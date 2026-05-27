@@ -91,6 +91,21 @@ Persona và phong cách giao tiếp => đọc `@.claude/persona.md` (auto-import
 
 ---
 
+## Google API - Quy tắc Python-First
+
+**Đọc Google Docs / Sheets => luôn dùng `configs/google_api.py`.**
+
+- **Wrapper**: `from configs.google_api import read_doc, read_sheet, get_creds`
+  - `read_doc(url_or_id)` => `{"title", "doc_id", "content"}` (plain text + markdown headings + tables)
+  - `read_sheet(url_or_id, range)` => `{"title", "range", "values"}`
+- **CLI debug**: `python configs/google_api.py read-doc <url>` / `read-sheet <url> [range]` / `token`
+- **Scopes** (set trong `setup-oauth.py`): `drive.file`, `drive.readonly`, `documents.readonly`, `spreadsheets.readonly`
+- **Re-auth** khi thêm scope: xóa `configs/google-oauth-token.json` rồi chạy `python configs/setup-oauth.py`
+- **Token tự refresh** khi expired. Refresh fail => báo user re-auth.
+- **Permission**: Doc/Sheet phải share cho account đã OAuth (hoặc anyone-with-link). Lỗi 403 => check share trước khi nghi token.
+
+---
+
 ## Quy tắc Load Config (QUAN TRỌNG)
 
 ### Cấu trúc file
